@@ -44,3 +44,41 @@ Make sure to specify the path to your PDF file in the code:
 ```python
 pdf_path = "Your pdf path"
 ```
+
+## Provide the PDF Path
+Make sure to specify the path to your PDF file in the code:
+
+## Run the Code
+Run the main script after you’ve set up the API key and PDF path. The script will:
+
+- Extract the text from your PDF.
+- Break the text into manageable chunks.
+- Use embeddings to generate vector representations for efficient querying.
+- Allow you to input any query and get an answer based on the PDF content.
+You can customize or add more queries as needed. For example:
+```python
+queries = [
+    "What is the main idea of the document?",
+    "Explain the conclusion of the paper."
+]
+
+for query in queries:
+    answer = answer_query(query)
+    print(f"Query: {query}\nAnswer: {answer}\n")
+```
+## Example Output
+After running the code, you will see results like this:
+
+```bash
+Copy code
+Query: What is energy?
+Answer: Energy is defined as the capacity to do work and comes in various forms such as kinetic, potential, thermal, etc.
+```
+
+## How It Works
+
+- Text Extraction: The PyPDF2 library extracts text from the PDF.
+- Text Splitting: LangChain splits the text into smaller chunks that fit within token limits for the GPT model.
+- Embeddings: OpenAI’s embedding model converts each chunk of text into vector embeddings.
+- Vector Search: FAISS is used to perform similarity search over the vectorized text chunks to find relevant sections based on user queries.
+- Question-Answering: The model answers queries by running a QA chain on the most relevant text sections.

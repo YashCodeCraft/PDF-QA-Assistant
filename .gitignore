@@ -1,0 +1,40 @@
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# FAISS index files
+*.faiss
+*.index
+
+# IDE files
+.idea/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Sensitive information
+apikeys.json
+*.env
+
+# Misc
+*.swp
+*.swo
+
+# Other files
+*.db
+*.sqlite3
